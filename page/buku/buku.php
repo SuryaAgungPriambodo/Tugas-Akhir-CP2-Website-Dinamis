@@ -3,9 +3,9 @@
         <!-- Advanced Tables -->
         <div class="panel panel-default">
             <div class="panel-heading">
-             Advanced Tables
-         </div>
-         <div class="panel-body">
+               Advanced Tables
+           </div>
+           <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
@@ -35,6 +35,10 @@
                                 <td><?php echo $data['penerbit'];?></td>
                                 <td><?php echo $data['isbn'];?></td>
                                 <td><?php echo $data['jumlah_buku'];?></td>
+                                <td>
+                                    <a href = "" class = "btn btn-info">Ubah</a>
+                                    <a href = "" class = "btn btn-danger">Hapus</a>
+                                </td>
                             </tr>
 
                         <?php }?> 
