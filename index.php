@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Bootstrap Admin Template : Binary Admin</title>
+  <title>Perpustakaan</title>
   <!-- BOOTSTRAP STYLES-->
   <link href="assets/css/bootstrap.css" rel="stylesheet" />
   <!-- FONTAWESOME STYLES-->
@@ -23,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Binary admin</a> 
+                <a class="navbar-brand" href="index.php">Perpustakaan</a> 
             </div>
             <div style="color: white;
             padding: 15px 50px 5px 50px;
@@ -43,15 +44,15 @@
                     </li>
 
                     <li>
-                        <a href=""><i class="fa fa-dashboard fa-3x"></i>Data Anggota</a>
+                        <a href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i>Data Anggota</a>
                     </li>
 
                     <li>
-                        <a href=""><i class="fa fa-dashboard fa-3x"></i>Data Buku</a>
+                        <a href="?page=buku"><i class="fa fa-dashboard fa-3x"></i>Data Buku</a>
                     </li>
 
                     <li>
-                        <a href=""><i class="fa fa-dashboard fa-3x"></i>Transaksi</a>
+                        <a href="?page=transaksi"><i class="fa fa-dashboard fa-3x"></i>Transaksi</a>
                     </li>
 
                 </ul>
@@ -64,28 +65,49 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
+                        <?php
+                        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
+                        $page = $_GET['page'];
+                        $aksi = $_GET['aksi'];
+
+                        if ($page == "anggota") {
+                            if ($aksi == "") {
+                                include "page/anggota/anggota.php";
+                            }
+                        }elseif ($page == "buku") {
+                            if ($aksi == "") {
+                                include "page/buku/buku.php";
+                            }
+                        }elseif ($page == "transaksi") {
+                            if ($aksi == "") {
+                                include "page/transaksi/transaksi.php";
+                            }
+
+                        }
+                            ?>
+
+                        </div>
                     </div>
+                    <!-- /. ROW  -->
+                    <hr />
+
                 </div>
-                <!-- /. ROW  -->
-                <hr />
-
+                <!-- /. PAGE INNER  -->
             </div>
-            <!-- /. PAGE INNER  -->
+            <!-- /. PAGE WRAPPER  -->
         </div>
-        <!-- /. PAGE WRAPPER  -->
-    </div>
-    <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+        <!-- /. WRAPPER  -->
+        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+        <!-- JQUERY SCRIPTS -->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- METISMENU SCRIPTS -->
+        <script src="assets/js/jquery.metisMenu.js"></script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="assets/js/custom.js"></script>
 
 
-</body>
-</html>
+    </body>
+    </html>
