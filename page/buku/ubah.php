@@ -6,6 +6,8 @@
 
 	$tampil = $sql -> fetch_assoc();
 
+	$tahun2 = $tampil['tahun_terbit']
+
 ?>
 
 <div class="panel panel-default">
@@ -24,12 +26,12 @@
 
 					<div class="form-group">
 						<label>Pengarang</label>
-						<input class="form-control" name = "pengarang"/>
+						<input class="form-control" name = "pengarang" value = "<?php echo $tampil['pengarang'];?>"/>
 					</div>
 
 					<div class="form-group">
 						<label>Penerbit</label>
-						<input class="form-control" name = "penerbit"/>
+						<input class="form-control" name = "penerbit" value = "<?php echo $tampil['penerbit'];?>"/>
 					</div>
 
 					<div class="form-group">
@@ -40,7 +42,15 @@
 							$tahun =date("Y");
 
 							for ($i=$tahun-29; $i <= $tahun; $i++) {
+								
+								if ($i == $tahun2) {
+
+								echo '<option value = "'.$i.'" selected>'.$i.'</option>';
+
+								}else{
+
 								echo '<option value="'.$i.'">'.$i.'</option>';
+							}
 							}
 
 							?>
@@ -49,12 +59,12 @@
 
 					<div class="form-group">
 						<label>ISBN</label>
-						<input class="form-control" name = "isbn"/>
+						<input class="form-control" name = "isbn" value = "<?php echo $tampil['isbn'];?>"/>
 					</div>
 
 					<div class="form-group">
 						<label>Jumlah Buku</label>
-						<input class="form-control" type = "number" name = "jumlah"/>
+						<input class="form-control" type = "number" name = "jumlah" value = "<?php echo $tampil['jumlah_buku'];?>"/>
 					</div>
 
 					<div class="form-group">
