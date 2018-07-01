@@ -5,7 +5,8 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-12">
-				<form role="form">
+
+				<form method="POST">
 					<div class="form-group">
 						<label>Judul</label>
 						<input class="form-control" name = "judul"/>
@@ -57,14 +58,45 @@
 
 					<div class="form-group">
 						<label>Tanggal Input</label>
-						<input class="form-control" name = "tanggal"/>
+						<input class="form-control" type = "date" name = "tanggal"/>
 					</div>
 
 					<div>
 						<input type = "submit" name="simpan" value = "Simpan" class="btn - btn-primary">
 					</div>
 
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
+</div>
+
+<?php
+
+$judul = $_POST ['judul'];
+$pengarang = $_POST ['pengarang'];
+$penerbit = $_POST ['penerbit'];
+$tahun = $_POST ['tahun'];
+$isbn = $_POST ['isbn'];
+$jumlah = $_POST ['jumlah'];
+$lokasi = $_POST ['lokasi'];
+$tanggal = $_POST ['tanggal'];
+
+$simpan = $_POST ['simpan'];
+
+if ($simpan) {
+
+	$sql = $koneksi -> query ("insert into tb_buku (judul, pengarang, penerbit, tahun_terbit, isbn, jumlah_buku, lokasi, tgl_input) values('$judul','$pengarang','$penerbit','$tahun','$isbn','$jumlah','$lokasi','$tanggal')");
+
+	if ($sql) {
+		?>
+
+		<script type = "text/javascript">
+			alert ("Data Berhasil Disimpan");
+		</script>
+		<?php
+
+	}
+}
+
+?>
