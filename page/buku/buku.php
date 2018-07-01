@@ -17,7 +17,7 @@
                                 <th>Pengarang</th>
                                 <th>Penerbit</th>
                                 <th>ISBN</th>
-                                <th>Jumlah Buku</th>
+                                <th>Jumlah</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
