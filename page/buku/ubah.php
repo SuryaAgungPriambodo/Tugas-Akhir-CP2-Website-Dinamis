@@ -1,6 +1,16 @@
+<?php
+
+	$id = $_GET['id'];
+
+	$sql = $koneksi -> query ("select * from tb_buku where id='$id'");
+
+	$tampil = $sql -> fetch_assoc();
+
+?>
+
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Tambah Data
+		Ubah Data
 	</div>
 	<div class="panel-body">
 		<div class="row">
@@ -9,7 +19,7 @@
 				<form method="POST">
 					<div class="form-group">
 						<label>Judul</label>
-						<input class="form-control" name = "judul"/>
+						<input class="form-control" name = "judul" value = "<?php echo $tampil['judul'];?>"/>
 					</div>
 
 					<div class="form-group">
