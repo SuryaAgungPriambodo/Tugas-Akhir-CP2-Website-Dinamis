@@ -1,9 +1,11 @@
+<a href =?page=buku&aksi=tambah class = "btn btn-primary" style = "margin-bottom:5px;">Tambah Buku</a>
+
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
         <div class="panel panel-default">
             <div class="panel-heading">
-               Advanced Tables
+                Data Buku
            </div>
            <div class="panel-body">
             <div class="table-responsive">
