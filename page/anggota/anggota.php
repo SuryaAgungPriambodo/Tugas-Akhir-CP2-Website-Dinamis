@@ -1,4 +1,4 @@
-<a href ="?page=buku&aksi=tambah" class = "btn btn-primary" style = "margin-bottom:5px;">Tambah Data</a>
+<a href ="?page=anggota&aksi=tambah" class = "btn btn-primary" style = "margin-bottom:5px;">Tambah Data</a>
 
 <div class="row">
     <div class="col-md-12">
@@ -13,8 +13,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
-                                <th>NIM</th>
+                                <th>Nama</t>
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
@@ -29,15 +28,16 @@
                             $sql = $koneksi->query("select * from tb_anggota");
 
                             while ($data = $sql->fetch_assoc()){
+                                
+                                $jk = ($data['jk']==l)?"Laki-Laki":"Perempuan";
                                 ?>
 
                                 <tr>
                                     <td><?php echo $no++;?></td>
                                     <td><?php echo $data['nama'];?></td>
-                                    <td><?php echo $data['nim'];?></td>
                                     <td><?php echo $data['tempat_lahir'];?></td>
                                     <td><?php echo $data['tgl_lahir'];?></td>
-                                    <td><?php echo $data['jk'];?></td>
+                                    <td><?php echo $jk;?></td>
                                     <td><?php echo $data['prodi'];?></td>
                                     <td>
                                         <a href = "?page=buku&aksi=ubah&id=<?php echo $data['id'];?>" class = "btn btn-info">Ubah</a>
