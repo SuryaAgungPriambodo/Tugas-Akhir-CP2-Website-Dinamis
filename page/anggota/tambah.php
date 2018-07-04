@@ -39,10 +39,10 @@
 
 					<div class="form-group">
 						<label>Tahun Terbit</label>
-						<select class="form-control" name = "prpdi">
-							<option value = "ti">Teknik Informatika</option>
-							<option value = "si">Sistem Informasi</option>
-							<option value = "sk">Sistem Komputer</option>
+						<select class="form-control" name = "prodi">
+							<option value = "Teknik Informatika">Teknik Informatika</option>
+							<option value = "Sistem Informasi">Sistem Informasi</option>
+							<option value = "Sistem Komputer">Sistem Komputer</option>
 						</select>
 					</div>
 
