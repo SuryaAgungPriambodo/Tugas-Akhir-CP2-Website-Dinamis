@@ -58,27 +58,25 @@
 
 <?php
 
-$judul = $_POST ['judul'];
-$pengarang = $_POST ['pengarang'];
-$penerbit = $_POST ['penerbit'];
-$tahun = $_POST ['tahun'];
-$isbn = $_POST ['isbn'];
-$jumlah = $_POST ['jumlah'];
-$lokasi = $_POST ['lokasi'];
-$tanggal = $_POST ['tanggal'];
+$nim = $_POST ['nim'];
+$nama = $_POST ['nama'];
+$tempat_lahir = $_POST ['tempat_lahir'];
+$tgl_lahir = $_POST ['tgl_lahir'];
+$jk = $_POST ['jk'];
+$prodi = $_POST ['prodi'];
 
 $simpan = $_POST ['simpan'];
 
 if ($simpan) {
 
-	$sql = $koneksi -> query ("insert into tb_buku (judul, pengarang, penerbit, tahun_terbit, isbn, jumlah_buku, lokasi, tgl_input) values('$judul','$pengarang','$penerbit','$tahun','$isbn','$jumlah','$lokasi','$tanggal')");
+	$sql = $koneksi -> query ("insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jk, prodi) values('$nim','$nama','$tempat_lahir','$tgl_lahir','$jk','$prodi')");
 
 	if ($sql) {
 		?>
 
 		<script type = "text/javascript">
 			alert ("Data Berhasil Disimpan");
-			window.location.href="?page=buku";
+			window.location.href="?page=anggota";
 		</script>
 		<?php
 
