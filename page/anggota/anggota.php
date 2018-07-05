@@ -44,7 +44,7 @@
                                     <td><?php echo $data['prodi'];?></td>
                                     <td>
                                         <a href = "?page=anggota&aksi=ubah&id=<?php echo $data['nim'];?>" class = "btn btn-info">Ubah</a>
-                                        <a onclick = "return confirm('Anda Yakin Ingin Menghapus Data Ini ?')"href = "?page=buku&aksi=hapus&id=<?php echo $data['id'];?>" class = "btn btn-danger">Hapus</a>
+                                        <a onclick = "return confirm('Anda Yakin Ingin Menghapus Data Ini ?')"href = "?page=anggota&aksi=hapus&id=<?php echo $data['nim'];?>" class = "btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
 
