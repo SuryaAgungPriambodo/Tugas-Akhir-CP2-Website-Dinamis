@@ -2,7 +2,7 @@
 
 <?php
 
-    $koneksi = new mysqli ("localhost","root","","db_perpustakaan")
+$koneksi = new mysqli ("localhost","root","","db_perpustakaan")
 
 ?>
 
@@ -19,6 +19,8 @@
   <link href="assets/css/custom.css" rel="stylesheet" />
   <!-- GOOGLE FONTS-->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+  <!-- TABLE STYLES-->
+  <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -80,10 +82,22 @@
                         if ($page == "anggota") {
                             if ($aksi == "") {
                                 include "page/anggota/anggota.php";
+                            }elseif ($aksi == "tambah") {
+                                include "page/anggota/tambah.php";
+                            }elseif ($aksi == "ubah") {
+                                include "page/anggota/ubah.php";
+                            }elseif ($aksi == "hapus") {
+                                include "page/anggota/hapus.php";
                             }
                         }elseif ($page == "buku") {
                             if ($aksi == "") {
                                 include "page/buku/buku.php";
+                            }elseif ($aksi == "tambah") {
+                                include "page/buku/tambah.php";
+                            }elseif ($aksi == "ubah") {
+                                include "page/buku/ubah.php";
+                            }elseif ($aksi == "hapus") {
+                                include "page/buku/hapus.php";
                             }
                         }elseif ($page == "transaksi") {
                             if ($aksi == "") {
@@ -91,29 +105,37 @@
                             }
 
                         }
-                            ?>
+                        ?>
 
-                        </div>
                     </div>
-                    <!-- /. ROW  -->
-                    <hr />
-
                 </div>
-                <!-- /. PAGE INNER  -->
+                <!-- /. ROW  -->
+                <hr />
+
             </div>
-            <!-- /. PAGE WRAPPER  -->
+            <!-- /. PAGE INNER  -->
         </div>
-        <!-- /. WRAPPER  -->
-        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-        <!-- JQUERY SCRIPTS -->
-        <script src="assets/js/jquery-1.10.2.js"></script>
-        <!-- BOOTSTRAP SCRIPTS -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- METISMENU SCRIPTS -->
-        <script src="assets/js/jquery.metisMenu.js"></script>
-        <!-- CUSTOM SCRIPTS -->
-        <script src="assets/js/custom.js"></script>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
 
 
-    </body>
-    </html>
+</body>
+</html>
