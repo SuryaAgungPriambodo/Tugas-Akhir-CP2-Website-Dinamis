@@ -72,27 +72,25 @@ $prodi = $tampil['prodi'];
 
 <?php
 
-$judul = $_POST ['judul'];
-$pengarang = $_POST ['pengarang'];
-$penerbit = $_POST ['penerbit'];
-$tahun = $_POST ['tahun'];
-$isbn = $_POST ['isbn'];
-$jumlah = $_POST ['jumlah'];
-$lokasi = $_POST ['lokasi'];
-$tanggal = $_POST ['tanggal'];
+$nim = $_POST ['nim'];
+$nama = $_POST ['nama'];
+$tempat_lahir = $_POST ['tempat_lahir'];
+$tgl_lahir = $_POST ['tgl_lahir'];
+$jk = $_POST ['jk'];
+$prodi = $_POST ['prodi'];
 
 $simpan = $_POST ['simpan'];
 
 if ($simpan) {
 
-	$sql = $koneksi -> query ("update tb_buku set judul='$judul', pengarang='$pengarang', penerbit='$penerbit', tahun_terbit='$tahun', isbn='$isbn', jumlah_buku='$jumlah', lokasi='$lokasi', tgl_input='$tanggal' where id='$id'");
+	$sql = $koneksi -> query ("update tb_anggota set nama='$nama', tempat_lahir='$tempat_lahir', tgl_lahir='$tgl_lahir', jk='$jk', prodi='$prodi' where nim='$nim'");
 
 	if ($sql) {
 		?>
 
 		<script type = "text/javascript">
 			alert ("Ubah Data Berhasil Disimpan");
-			window.location.href="?page=buku";
+			window.location.href="?page=anggota";
 		</script>
 		<?php
 
