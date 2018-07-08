@@ -2,7 +2,13 @@
 
 <?php
 
-$koneksi = new mysqli ("localhost","root","","db_perpustakaan")
+session_start();
+
+error_reporting();
+
+include "function.php";
+
+$koneksi = new mysqli ("localhost","root","","db_perpustakaan");
 
 ?>
 
@@ -102,6 +108,8 @@ $koneksi = new mysqli ("localhost","root","","db_perpustakaan")
                         }elseif ($page == "transaksi") {
                             if ($aksi == "") {
                                 include "page/transaksi/transaksi.php";
+                            }elseif ($aksi == "tambah") {
+                                include "page/transaksi/tambah.php";
                             }
 
                         }
