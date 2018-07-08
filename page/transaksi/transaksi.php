@@ -1,11 +1,11 @@
-<a href ="?page=anggota&aksi=tambah" class = "btn btn-success" style = "margin-bottom:5px;"><i class = "fa fa-plus"></i> Tambah Data</a>
+<a href ="?page=transaksi&aksi=tambah" class = "btn btn-success" style = "margin-bottom:5px;"><i class = "fa fa-plus"></i> Tambah Data</a>
 
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
         <div class="panel panel-primary">
             <div class="panel-heading">
-                Data Buku
+                Data Transaksi
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
