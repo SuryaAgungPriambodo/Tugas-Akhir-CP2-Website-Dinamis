@@ -93,6 +93,20 @@ if (isset($_POST['simpan'])) {
 			</script>
 
 			<?php
+
+		}else {
+			$sql = $koneksi->query("insert into tb_transaksi(judul, nim, nama, tgl_pinjam, tgl_kembali, status)values('$judul','$nim','$nama','$tgl_pinjam','$tgl_kembali','pinjam')");
+
+			$sql2 = $koneksi->query("update tb_buku set jumlah_buku=(jumlah_buku-1) where id='$id'");
+			
+			?>
+
+			<script type = "text/javascript">
+				alert("Data Berhasil Disimpan");
+				window.location.href="?page=transaksi";
+			</script>
+
+			<?php
 		}
 	}
 }
