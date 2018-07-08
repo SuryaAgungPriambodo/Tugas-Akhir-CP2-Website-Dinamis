@@ -65,30 +65,35 @@ $kembali = date("d-m-Y", $tujuh_hari);
 
 <?php
 
-$judul = $_POST ['judul'];
-$pengarang = $_POST ['pengarang'];
-$penerbit = $_POST ['penerbit'];
-$tahun = $_POST ['tahun'];
-$isbn = $_POST ['isbn'];
-$jumlah = $_POST ['jumlah'];
-$lokasi = $_POST ['lokasi'];
-$tanggal = $_POST ['tanggal'];
+if (isset($_POST['simpan'])) {
 
-$simpan = $_POST ['simpan'];
+	$tgl_pinjam = $_POST['tgl_pinjam'];
+	$tgl_kembali = $_POST['tgl_kembali'];
 
-if ($simpan) {
+	$buku = $_POST['buku'];
+	$pecah_buku = explode(".", $buku);
+	$id = $pecah_buku[0];
+	$judul = $pecah_buku[1];
 
-	$sql = $koneksi -> query ("insert into tb_buku (judul, pengarang, penerbit, tahun_terbit, isbn, jumlah_buku, lokasi, tgl_input) values('$judul','$pengarang','$penerbit','$tahun','$isbn','$jumlah','$lokasi','$tanggal')");
+	$nama = $_POST['nama'];
+	$pecah_nama = explode(".", $nama);
+	$nim = $pecah_nama[0];
+	$nama = $pecah_nama[1];
 
-	if ($sql) {
-		?>
+	$sql = $koneksi->query("select * from tb_buku where judul = '$judul'");
+	while ($data = $sql->fetch_assoc()) {
+		$sisa = $data['jumlah_buku'];
 
-		<script type = "text/javascript">
-			alert ("Data Berhasil Disimpan");
-			window.location.href="?page=buku";
-		</script>
-		<?php
+		if ($sisa == 0) {
+			?>
 
+			<script type = "text/javascript">
+				alert("Stok Buku Habis, Transaksi Tidak Bisa Dilakukan, Silahkan Tambah Stok Buku Terlebih Dahulu");
+				window.location.href="?page=transaksi&aksi=tambah";
+			</script>
+
+			<?php
+		}
 	}
 }
 
