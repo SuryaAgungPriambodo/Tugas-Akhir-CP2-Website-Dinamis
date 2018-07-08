@@ -1,3 +1,37 @@
+<script type="text/javascript">
+	function validasi(form){
+		if (form.nim.value==""){
+			alert("NIM Tidak Boleh Kosong");
+			form.nim.focus();
+			return(false);
+		}if (form.nama.value==""){
+			alert("Nama Tidak Boleh Kosong");
+			form.nama.focus();
+			return(false);
+		}if (form.tempat_lahir.value==""){
+			alert("Tempat Lahir Tidak Boleh Kosong");
+			form.tempat_lahir.focus();
+			return(false);
+		}if (form.tgl_lahir.value==""){
+			alert("Tanggal Lahir Tidak Boleh Kosong");
+			form.tgl_lahir.focus();
+			return(false);
+		}
+		return(true);
+
+	}
+</script>
+
+<script type="text/javascript">
+	function hanyaAngka(evt) {
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+			return false;
+		return true;
+	}
+</script>
+
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		Tambah Data
@@ -6,10 +40,10 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<form method="POST">
+				<form method="POST" onsubmit ="return validasi(this)">
 					<div class="form-group">
 						<label>NIM</label>
-						<input class="form-control" name = "nim"/>
+						<input class="form-control" name = "nim" maxlength="8" onkeypress="return hanyaAngka(event)"/>
 					</div>
 
 					<div class="form-group">
@@ -20,10 +54,10 @@
 					<div class="form-group">
 						<label>Jenis Kelamin</label>
 						<label class="checkbox-inline">
-							<input type="radio" value = "l" name ="but"/> Laki-Laki
+							<input type="radio" value = "l" name ="jk" checked="checked"/> Laki-Laki
 						</label>
 						<label class="checkbox-inline">
-							<input type="radio" value = "p" name ="but"/> Perempuan
+							<input type="radio" value = "p" name ="jk"/> Perempuan
 						</label>
 					</div>
 

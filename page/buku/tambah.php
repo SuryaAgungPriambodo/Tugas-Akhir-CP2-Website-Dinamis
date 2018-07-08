@@ -1,3 +1,39 @@
+<script type="text/javascript">
+	function validasi(form){
+		if (form.judul.value==""){
+			alert("Judul Tidak Boleh Kosong");
+			form.judul.focus();
+			return(false);
+		}if (form.pengarang.value==""){
+			alert("Pengarang Tidak Boleh Kosong");
+			form.pengarang.focus();
+			return(false);
+		}if (form.penerbit.value==""){
+			alert("Penerbit Tidak Boleh Kosong");
+			form.penerbit.focus();
+			return(false);
+		}if (form.tahun.value==""){
+			alert("Tahun Terbit Tidak Boleh Kosong");
+			form.tahun.focus();
+			return(false);
+		}if (form.isbn.value==""){
+			alert("ISBN Tidak Boleh Kosong");
+			form.isbn.focus();
+			return(false);
+		}if (form.jumlah.value==""){
+			alert("Jumlah Buku Tidak Boleh Kosong");
+			form.jumlah.focus();
+			return(false);
+		}if (form.tanggal.value==""){
+			alert("Tanggal Input Tidak Boleh Kosong");
+			form.tanggal.focus();
+			return(false);
+		}
+		return(true);
+
+	}
+</script>
+
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		Tambah Data
@@ -6,7 +42,7 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<form method="POST">
+				<form method="POST" onsubmit ="return validasi(this)">
 					<div class="form-group">
 						<label>Judul</label>
 						<input class="form-control" name = "judul"/>

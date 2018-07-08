@@ -1,3 +1,27 @@
+<script type="text/javascript">
+	function validasi(form){
+		if (form.nim.value==""){
+			alert("NIM Tidak Boleh Kosong");
+			form.nim.focus();
+			return(false);
+		}if (form.nama.value==""){
+			alert("Nama Tidak Boleh Kosong");
+			form.nama.focus();
+			return(false);
+		}if (form.tempat_lahir.value==""){
+			alert("Tempat Lahir Tidak Boleh Kosong");
+			form.tempat_lahir.focus();
+			return(false);
+		}if (form.tgl_lahir.value==""){
+			alert("Tanggal Lahir Tidak Boleh Kosong");
+			form.tgl_lahir.focus();
+			return(false);
+		}
+		return(true);
+
+	}
+</script>
+
 <?php
 
 $nim = $_GET['id'];
@@ -20,7 +44,7 @@ $prodi = $tampil['prodi'];
 		<div class="row">
 			<div class="col-md-12">
 
-				<form method="POST">
+				<form method="POST" onsubmit ="return validasi(this)">
 					<div class="form-group">
 						<label>NIM</label>
 						<input class="form-control" name = "nim" value = "<?php echo $tampil['nim'];?>" readonly />
@@ -44,10 +68,10 @@ $prodi = $tampil['prodi'];
 					<div class="form-group">
 						<label>Jenis Kelamin</label>
 						<label class="checkbox-inline">
-							<input type="radio" value = "l" name ="but" <?php echo($jkl==l)?"checked":"";?>/> Laki-Laki
+							<input type="radio" value = "l" name ="jk" <?php echo($jkl==l)?"checked":"";?>/> Laki-Laki
 						</label>
 						<label class="checkbox-inline">
-							<input type="radio" value = "p" name ="but" <?php echo($jkl==p)?"checked":"";?>/> Perempuan
+							<input type="radio" value = "p" name ="jk" <?php echo($jkl==p)?"checked":"";?>/> Perempuan
 						</label>
 					</div>
 

@@ -6,7 +6,7 @@
         <!-- Advanced Tables -->
         <div class="panel panel-primary">
             <div class="panel-heading">
-                Data Buku
+                Data Anggota
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
