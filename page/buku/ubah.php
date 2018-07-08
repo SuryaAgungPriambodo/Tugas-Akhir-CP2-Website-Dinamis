@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
 	<div class="panel-heading">
 		Ubah Data
 	</div>

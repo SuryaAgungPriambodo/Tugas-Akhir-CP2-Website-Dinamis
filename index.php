@@ -37,7 +37,7 @@ $koneksi = new mysqli ("localhost","root","","db_perpustakaan")
             <div style="color: white;
             padding: 15px 50px 5px 50px;
             float: right;
-            font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+            font-size: 16px;"> <?php echo date('d-M-Y'); ?> &nbsp; <a href="logout.php" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -52,15 +52,15 @@ $koneksi = new mysqli ("localhost","root","","db_perpustakaan")
                     </li>
 
                     <li>
-                        <a href="?page=anggota"><i class="fa fa-dashboard fa-3x"></i>Data Anggota</a>
+                        <a href="?page=anggota"><i class="fa fa-users fa-3x"></i>Data Anggota</a>
                     </li>
 
                     <li>
-                        <a href="?page=buku"><i class="fa fa-dashboard fa-3x"></i>Data Buku</a>
+                        <a href="?page=buku"><i class="fa fa-book fa-3x"></i>Data Buku</a>
                     </li>
 
                     <li>
-                        <a href="?page=transaksi"><i class="fa fa-dashboard fa-3x"></i>Transaksi</a>
+                        <a href="?page=transaksi"><i class="fa fa-edit fa-3x"></i>Transaksi</a>
                     </li>
 
                 </ul>
