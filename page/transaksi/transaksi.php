@@ -69,8 +69,8 @@
                                     </td>
                                     <td><?php echo $status;?></td>
                                     <td>
-                                        <a href = "?page=anggota&aksi=ubah&id=<?php echo $data['nim'];?>" class = "btn btn-info"><i class="fa fa-edit"></i> Ubah</a>
-                                        <a onclick = "return confirm('Anda Yakin Ingin Menghapus Data Ini ?')"href = "?page=anggota&aksi=hapus&id=<?php echo $data['nim'];?>" class = "btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                        <a href = "?page=transaksi&aksi=kembali&id=<?php echo $data['id']; ?>&judul=<?php echo $data['judul']; ?>" class = "btn btn-info"></i>Kembali</a>
+                                        <a href = "?page=transaksi&aksi=perpanjang&id=<?php echo $data['id']; ?>&judul=<?php echo $data['judul']?>&lambat=<?php echo $lambat ?>$tgl_kembali=<?php echo $data['tgl_kembali']?>" class = "btn btn-danger">Perpanjang</a>
                                     </td>
                                 </tr>
 
