@@ -1,6 +1,3 @@
-
-<a href ="?page=anggota&aksi=tambah" class = "btn btn-success" style = "margin-bottom:5px;"><i class = "fa fa-plus"></i> Tambah Data</a>
-
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
@@ -31,10 +28,10 @@
                             $sql = $koneksi->query("select * from tb_anggota");
 
                             while ($data = $sql->fetch_assoc()){
-                                
-                                $jk = ($data['jk']==l)?"Laki-Laki":"Perempuan";
 
-                                ?>
+                            $jk = ($data['jk']==l)?"Laki-Laki":"Perempuan";
+
+                            ?>
 
                                 <tr>
                                     <td><?php echo $no++;?></td>
@@ -54,7 +51,10 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div>    
         </div>
+<a href ="?page=anggota&aksi=tambah" class = "btn btn-success"><i class = "fa fa-plus"></i> Tambah Data</a>
+
+<a href = "./laporan/laporan_anggota_excel.php" class = "btn btn-default"> <i class = "fa fa-print"></i> Export Ke Excel</a>
     </div>
 </div>
