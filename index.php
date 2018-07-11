@@ -4,11 +4,11 @@
 
 session_start();
 
-error_reporting();
-
 include "function.php";
 
 $koneksi = new mysqli ("localhost","root","","db_perpustakaan");
+
+if ($_SESSION['admin'] || $_SESSION['user']) {
 
 ?>
 
@@ -110,6 +110,10 @@ $koneksi = new mysqli ("localhost","root","","db_perpustakaan");
                                 include "page/transaksi/transaksi.php";
                             }elseif ($aksi == "tambah") {
                                 include "page/transaksi/tambah.php";
+                            }elseif ($aksi == "kembali") {
+                                include "page/transaksi/kembali.php";
+                            }elseif ($aksi == "perpanjang") {
+                                include "page/transaksi/perpanjang.php";
                             }
 
                         }
@@ -147,3 +151,11 @@ $koneksi = new mysqli ("localhost","root","","db_perpustakaan");
 
 </body>
 </html>
+
+<?php
+
+}else{
+    header("location:login.php");
+}
+
+?>
