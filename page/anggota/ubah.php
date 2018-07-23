@@ -76,7 +76,7 @@ $prodi = $tampil['prodi'];
 					</div>
 
 					<div class="form-group">
-						<label>Tahun Terbit</label>
+						<label>Jurusan</label>
 						<select class="form-control" name = "prodi">
 							<option value = "Teknik Informatika" <?php if ($prodi=='Teknik Informatika'){echo "selected";}?>>Teknik Informatika</option>
 							<option value = "Sistem Informasi" <?php if ($prodi=='Sistem Informasi'){echo "selected";}?>>Sistem Informasi</option>

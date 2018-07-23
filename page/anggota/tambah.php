@@ -72,7 +72,7 @@
 					</div>
 
 					<div class="form-group">
-						<label>Tahun Terbit</label>
+						<label>Jurusan</label>
 						<select class="form-control" name = "prodi">
 							<option value = "Teknik Informatika">Teknik Informatika</option>
 							<option value = "Sistem Informasi">Sistem Informasi</option>
@@ -103,7 +103,9 @@ $simpan = $_POST ['simpan'];
 
 if ($simpan) {
 
+
 	$sql = $koneksi -> query ("insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jk, prodi) values('$nim','$nama','$tempat_lahir','$tgl_lahir','$jk','$prodi')");
+
 
 	if ($sql) {
 		?>

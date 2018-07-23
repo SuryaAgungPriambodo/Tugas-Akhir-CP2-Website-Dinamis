@@ -55,6 +55,8 @@
         </div>
 <a href ="?page=anggota&aksi=tambah" class = "btn btn-success"><i class = "fa fa-plus"></i> Tambah Data</a>
 
-<a href = "./laporan/laporan_anggota_excel.php" class = "btn btn-default"> <i class = "fa fa-print"></i> Export Ke Excel</a>
+<a href = "./laporan/laporan_anggota_excel.php" target = "blank" class = "btn btn-default"> <i class = "fa fa-print"></i> Export Ke Excel</a>
+
+<a href = "./laporan/laporan_anggota_pdf.php" target = "blank" class = "btn btn-default"> <i class = "fa fa-print"></i> Export Ke PDF</a>
     </div>
 </div>
